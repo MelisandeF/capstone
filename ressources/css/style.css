@@ -1,13 +1,80 @@
-content{
+/* Font attributes*/
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Genral attribtes*/
+
+html{
+  font-family: "Lato", sans-serif;
+}
+
+*{
   margin: 0;
 }
 
+p{
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+/*Header*/
+
 header{
-  background-color: red;
+  display: flex;
+  background-color: white;
   display: flex;
   width: 100%;
   height: 64px;
   z-index: 1;
+}
+
+.navigation{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+  margin-right: 24px;
+}
+
+.navigation span{
+padding-left: 16px;
+}
+
+.navigation a{
+  text-decoration: none;
+  color: black;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 760px){
+
 }
 
 /*Heading*/
@@ -15,21 +82,54 @@ header{
 .heading{
   display:flex;
   width: 100%;
-  background-color: lightgrey;
+  background-color: #EAEAEA;
+  color: #404040;
+  height: 500px;
+}
+
+.heading h1{
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+
+.heading h3{
+  font-family:"Open Sans", sans-serif;
 }
 
 .heading .container {
+  display: flex;
   width: 60%;
   margin: 32px 24px;
-  background-image: url(.\images\banner.jpg);
-  background-color: green;
+  background-image: url('file://C:/Users/fleis/Projects/capstone/ressources/css/images/banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 
-.button{
-  background-color: white;
+.home{
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
   width: 30%;
+}
+
+.button{
+  background-color: #404040;
+  color: white;
   padding: 8px;
+  border-radius: 2px;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 760px){
+  .heading{
+
+  }
 }
 
 
@@ -38,28 +138,93 @@ header{
 .informations{
   display: flex;
   width: 100%;
-  background-color: blue;
+  height: 550px;
+}
+
+.informations h2{
+  padding-bottom: 24px;
 }
 
 .informations .container {
-  width: 60%;
-  margin: 32px 24px;
-  background-color: green;
-
-}
-
-.column{
   display: flex;
+  width: 100%;
+  background-image: url('file://C:/Users/fleis/Projects/capstone/ressources/css/images/information-main.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70%;
 }
 
-.smallimage{
+.informations .practice{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.informations .column{
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 32px 0px 32px 24px;
+}
+
+.informations .column2{
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  margin: 24px;
+}
+.smallcontainer{
+  display: flex;
+  height: 30%;
+  flex-grow: 1;
+  border: 1px solid #EAEAEA;
+}
+
+.smallimageone{
   width: 35%;
-  background-color: green;
+  background-image: url('file://C:/Users/fleis/Projects/capstone/ressources/css/images/information-orientation.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-items: center;
+  margin: 16px;
+}
+
+.smallimagetwo{
+  width: 35%;
+  background-image: url('file://C:/Users/fleis/Projects/capstone/ressources/css/images/information-campus.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-items: center;
+  margin: 16px;
+}
+
+.smallimagethree{
+  width: 35%;
+  background-image: url('file://C:/Users/fleis/Projects/capstone/ressources/css/images/information-guest-lecture.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-items: center;
+  margin: 16px;
 }
 
 .proposition{
+  display: flex;
   width: 65%;
-  background-color: black;
+  background-color: #EAEAEA;
+  margin-top: 16px;
+  flex-direction: column;
+  padding: 0.3rem;
+  justify-content: center;
+}
+
+.proposition a{
+  padding-top: 8px;
+}
+
+.proposition p{
+  padding-top: 8px;
 }
 
 
@@ -68,21 +233,109 @@ header{
 .skills{
   display:flex;
   width:100%;
-  background-color: orange;
+  background-color: #EAEAEA;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.skills h2{
+  width: 100%;
+  text-align:center;
+  margin: 32px auto;
 }
 
 .skill{
   display: flex;
   width: 30%;
-  background-color: yellow;
-
+  background-color: white;
+  flex-direction: column;
+  margin: 16px;
 }
+/* Thesis section*/
+
+.exhibition{
+  display: flex;
+  width: 100%;
+  height: 550px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.exhibition h2{
+  width: 100%;
+  text-align:center;
+  margin: 32px auto;
+}
+
+.exhibition .container {
+  display: flex;
+  width: 90%;
+  height: 70%;
+}
+
+.exhibition .practice{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 60%;
+}
+
+.exhibition .column{
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: 32px 0px 32px 24px;
+}
+
+.exhibition .column2{
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  margin: 24px;
+}
+
+.container video {
+display: flex;
+justify-content: flex-start;
+}
+
+.smallimagefour{
+  width: 35%;
+  background-image: url('file://C:/Users/fleis/Projects/capstone/ressources/css/images/thesis-fisma.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-items: center;
+  margin: 16px;
+}
+
+.smallimagefive{
+  width: 35%;
+  background-image: url('file://C:/Users/fleis/Projects/capstone/ressources/css/images/thesis-now-and-then.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  align-items: center;
+  margin: 16px;
+}
+
+/*Footer*/
 
 
 .footer{
-  background-color: red;
+  background-color: white;
   display: flex;
   width: 100%;
   height: 64px;
   z-index: 1;
+}
+
+.footer .navigation{
+  width: 70%;
+}
+
+.footer .copyright{
+  display: flex;
+  width: 30%;
+  align-items: center;
 }
